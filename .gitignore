@@ -1,0 +1,43 @@
+# Ignore compiled class files
+*.class
+
+# Ignore IDE-specific files and directories
+.idea/
+.vscode/
+
+# Ignore build output
+bin/
+target/
+
+# Ignore metadata files
+*.iml
+*.ipr
+*.iws
+*.log
+
+# Ignore Maven build files
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore Eclipse build files
+bin/
+*.pydevproject
+.project
+.classpath
+.settings/
+
+# Ignore NetBeans build files
+nbproject/
+
+# Ignore generated Gradle build files
+.gradle/
+
+# Ignore IntelliJ IDEA files
+*.iws
+*.iml
+*.ipr
+.idea
+
+# Ignore Mac-specific files
+.DS_Store
+
