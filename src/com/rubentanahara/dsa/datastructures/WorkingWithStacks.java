@@ -1,0 +1,54 @@
+import java.util.Stack;
+// Purpose: Demonstrate how to use a stack
+
+public class WorkingWithStacks {
+    public static void main(String[] args) {
+        // Stack
+        Stack<String> stack = new Stack<>();
+        stack.push("bottom");
+        printStack(stack);
+        stack.push("second");
+        printStack(stack);
+        stack.push("third");
+        printStack(stack);
+        stack.push("top");
+        printStack(stack);
+        stack.pop();
+        printStack(stack);
+        stack.pop();
+        printStack(stack);
+        stack.pop();
+        printStack(stack);
+        stack.pop();
+        printStack(stack);
+
+
+        Stack<Integer> stack2 = new Stack<>();
+        stack2.push(1);
+        printStack(stack2);
+        stack2.push(2);
+        printStack(stack2);
+        stack2.push(3);
+        printStack(stack2);
+        stack2.push(4);
+        printStack(stack2);
+        stack2.pop();
+        printStack(stack2);
+        stack2.pop();
+        printStack(stack2);
+        stack2.pop();
+        printStack(stack2);
+        stack2.pop();
+        printStack(stack2);
+        
+        
+    }
+
+    private static void printStack(Stack<String> stack) {
+        if (stack.isEmpty()) {
+            System.out.println("You have nothing in your stack");
+        } else {
+            System.out.printf("%s TOP, size: %s \n", stack,stack.size());
+        }
+    }
+}
