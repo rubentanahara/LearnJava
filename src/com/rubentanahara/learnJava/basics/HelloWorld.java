@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import OOP.User;
 
 public class HelloWorld { // The program search for the static main method
     static int age; // global variable
@@ -352,14 +351,14 @@ public class HelloWorld { // The program search for the static main method
 
         // oop
 
-        User newUser = new User("Ruben Tanahara", "1999-01-13");
-        // newUser.name = "Ruben Tanahara";
-        // newUser.birthday = LocalDate.parse("1999-01-13");
-        newUser.getAge();
-        newUser.getName();
-
-        // System.out.printf("%s was born back in %s",newUser.name, newUser.birthday);
-        System.out.printf("%s was born back in %s", newUser.getName(), newUser.getAge());
+        // User newUser = new User("Ruben Tanahara", "1999-01-13");
+        // // newUser.name = "Ruben Tanahara";
+        // // newUser.birthday = LocalDate.parse("1999-01-13");
+        // newUser.getAge();
+        // newUser.getName();
+        //
+        // // System.out.printf("%s was born back in %s",newUser.name, newUser.birthday);
+        // System.out.printf("%s was born back in %s", newUser.getName(), newUser.getAge());
 
     }
 }
