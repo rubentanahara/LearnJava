@@ -25,30 +25,38 @@ public class WorkingWithStacks {
 
         Stack<Integer> stack2 = new Stack<>();
         stack2.push(1);
-        printStack(stack2);
+        printIntegerStack(stack2);
         stack2.push(2);
-        printStack(stack2);
+        printIntegerStack(stack2);
         stack2.push(3);
-        printStack(stack2);
+        printIntegerStack(stack2);
         stack2.push(4);
-        printStack(stack2);
+        printIntegerStack(stack2);
         stack2.pop();
-        printStack(stack2);
+        printIntegerStack(stack2);
         stack2.pop();
-        printStack(stack2);
+        printIntegerStack(stack2);
         stack2.pop();
-        printStack(stack2);
+        printIntegerStack(stack2);
         stack2.pop();
-        printStack(stack2);
-        
-        
+        printIntegerStack(stack2);
+
+
     }
 
     private static void printStack(Stack<String> stack) {
         if (stack.isEmpty()) {
             System.out.println("You have nothing in your stack");
         } else {
-            System.out.printf("%s TOP, size: %s \n", stack,stack.size());
+            System.out.printf("%s TOP, size: %s \n", stack, stack.size());
+        }
+    }
+
+    private static void printIntegerStack(Stack<Integer> stack) {
+        if (stack.isEmpty()) {
+            System.out.println("You have nothing in your stack");
+        } else {
+            System.out.printf("%s TOP, size: %s \n", stack, stack.size());
         }
     }
 }

@@ -1,5 +1,7 @@
 package basics;
 
+import OOP.User;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -229,7 +231,7 @@ public class HelloWorld { // The program search for the static main method
 
         // Arrays
 
-        char MY_NAME[] = new char[5];
+        char[] MY_NAME = new char[5];
 
         MY_NAME[0] = 'r';
         MY_NAME[1] = 'u';
@@ -249,15 +251,15 @@ public class HelloWorld { // The program search for the static main method
         System.out.println(MY_NAME[foundItemIdx]);
         Arrays.fill(MY_NAME, 'x'); // fill all the arrray with that character (will replace all items) , you can
                                    // specify the range
-        char copy[] = Arrays.copyOf(MY_NAME, MY_NAME.length);
+        char[] copy = Arrays.copyOf(MY_NAME, MY_NAME.length);
         System.out.println(Arrays.toString(copy));
 
-        int numberss[] = { 1, 2, 3, 4, 5 };
+        int[] numberss = { 1, 2, 3, 4, 5 };
 
         int start = 0;
         int end = 10;
 
-        int copyNumberss[] = Arrays.copyOfRange(numberss, start, end);
+        int[] copyNumberss = Arrays.copyOfRange(numberss, start, end);
 
         System.out.println(Arrays.equals(MY_NAME, copy));
 
@@ -277,7 +279,7 @@ public class HelloWorld { // The program search for the static main method
             }
         }
 
-        int arr[] = { 1, 2, 3, 4, 5 };
+        int[] arr = { 1, 2, 3, 4, 5 };
 
         for (int number : arr) {
             System.out.println(number);
@@ -313,7 +315,7 @@ public class HelloWorld { // The program search for the static main method
         NUMBERS.add(7);
         NUMBERS.add(8);
 
-        System.out.println(NUMBERS.toString());
+        System.out.println(NUMBERS);
         System.out.println(NUMBERS.get(0));
         NUMBERS.remove(7);
         NUMBERS.remove(Integer.valueOf(4));
@@ -339,7 +341,7 @@ public class HelloWorld { // The program search for the static main method
         System.out.println(examScores.get("Math"));
         examScores.putIfAbsent("Math", 70);
         examScores.replace("English", 85);
-        System.out.println(examScores.toString());
+        System.out.println(examScores);
         examScores.getOrDefault("Letters", 0);
         examScores.remove("History");
         examScores.containsKey("Math");
@@ -347,18 +349,18 @@ public class HelloWorld { // The program search for the static main method
         examScores.forEach((k, v) -> {
             examScores.replace(k, v - 10);
         });
-        System.out.println(examScores.toString());
+        System.out.println(examScores);
 
         // oop
 
-        // User newUser = new User("Ruben Tanahara", "1999-01-13");
-        // // newUser.name = "Ruben Tanahara";
-        // // newUser.birthday = LocalDate.parse("1999-01-13");
-        // newUser.getAge();
-        // newUser.getName();
-        //
-        // // System.out.printf("%s was born back in %s",newUser.name, newUser.birthday);
-        // System.out.printf("%s was born back in %s", newUser.getName(), newUser.getAge());
+         User newUser = new User("Ruben Tanahara", "1999-01-13");
+         //newUser.name = "Ruben Tanahara";
+         // newUser.birthday = LocalDate.parse("1999-01-13");
+         newUser.getAge();
+         newUser.getName();
+
+         // System.out.printf("%s was born back in %s",newUser.name, newUser.birthday);
+         System.out.printf("%s was born back in %s", newUser.getName(), newUser.getAge());
 
     }
 }

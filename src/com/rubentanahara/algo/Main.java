@@ -5,16 +5,6 @@ public class Main {
         int[] arr = {20, 35, -15, 7, 55, 1, -22};
         int[] arr2 = {2, 5, 9, 8, 2, 8, 7, 10, 4, 3};
         int[] radixArr = {4725, 4586, 1330, 8792, 1594, 5729};
-        // bubbleSort(arr);
-        // selectionSort(arr);
-        // insertionSort(arr);
-        // shellSort(arr);
-        // int result = recursiveFactorial(5);
-        // System.out.println(result);
-        // mergeSort(arr, 0, arr.length);
-        // quickSort(arr, 0, arr.length);
-        // countingSort(arr2, 1, 10);
-//        radixSort(radixArr, 10, 4);
         Arrays.parallelSort(arr);
         printArray(arr);
     }
@@ -26,7 +16,7 @@ public class Main {
         }
     }
 
-    private static void radixSingleSort(int[] arr, int position, int radix) {
+    public static void radixSingleSort(int[] arr, int position, int radix) {
         int numItems = arr.length;
 
         int[] countArr = new int[radix];
@@ -36,7 +26,7 @@ public class Main {
         }
 
         for (int j = 1; j < radix; j++) {
-            countArr[j] += countArr[j - 1]; // ajust the count array
+            countArr[j] += countArr[j - 1]; // adjust the count array
         }
 
         int[] temp = new int[numItems];
@@ -44,18 +34,16 @@ public class Main {
             temp[--countArr[getDigit(position, arr[k], radix)]] = arr[k];
 
         }
-        for (int k = 0; k < numItems; k++) {
-            arr[k] = temp[k];
-        }
+        // Copy array
+        System.arraycopy(temp, 0, arr, 0, numItems);
     }
 
-    private static int getDigit(int position, int value, int radix) {
+    public static int getDigit(int position, int value, int radix) {
         return value / (int) Math.pow(radix, position) % radix;
     }
 
     // Counting Sort
     public static void countingSort(int[] arr, int min, int max) {
-
         int[] countArr = new int[(max - min) + 1];
 
         for (int item : arr) {
@@ -118,8 +106,7 @@ public class Main {
     }
 
     public static void merge(int[] input, int start, int mid, int end) {
-
-        if (input[mid - 1] <= input[mid]) { // 1# Optimazation
+        if (input[mid - 1] <= input[mid]) { // #1 Optimization
             return;
             // we always use sorted arrays
         }
@@ -157,7 +144,6 @@ public class Main {
     }
 
     public static void shellSort(int[] arr) {
-        System.out.println("Shell Sort");
         // Unstable
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < arr.length; i++) {
@@ -175,7 +161,6 @@ public class Main {
 
     // Insertion Sort
     public static void insertionSort(int[] arr) {
-        System.out.println("Insertion Sort");
         // Stable sort
         for (int firstUnsortedIdx = 1; firstUnsortedIdx < arr.length; firstUnsortedIdx++) {
             int newElement = arr[firstUnsortedIdx];
@@ -192,7 +177,6 @@ public class Main {
 
     // Selection Sort
     public static void selectionSort(int[] arr) {
-        System.out.println("Selection Sort");
         // Unstable
         for (int lastUnsortedIdx = arr.length - 1; lastUnsortedIdx > 0; lastUnsortedIdx--) {
             int largest = 0;
@@ -208,7 +192,6 @@ public class Main {
 
     // Bubble Sort
     public static void bubbleSort(int[] arr) {
-        System.out.println("Bubble Sort");
         // Stable sort
         for (int lastUnsortedIdx = arr.length - 1; lastUnsortedIdx > 0; lastUnsortedIdx--) {
             for (int idx = 0; idx < lastUnsortedIdx; idx++) {
@@ -241,7 +224,7 @@ public class Main {
 
 // Stable and unstable sort
 // comes to play when you have duplicate values
-// is the initial orders will be perserve
-// unstable relative order of the duplicates items will not perserve
+// is the initial orders will be preserved
+// unstable relative order of the duplicates items will not preserve
 // Stable Sort
-// The initial order is perserved
+// The initial order is preserved
