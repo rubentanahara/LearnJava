@@ -1,7 +1,6 @@
-package com.rubentanahara.dsa.datastructures;
 import java.util.Arrays;
 
-public class Array {
+public class WorkingWithArrays {
     public static void main(String[] args) {
         int[] numbers = new int[5];
         // int[] numbers = { 2, 3, 5, 1, 4 };
